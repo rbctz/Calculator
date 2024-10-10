@@ -10,16 +10,19 @@ public class Calculator implements ActionListener{
     /* Two JButton arrays for numbered buttons and for function buttons */
     JButton[] numberButtons = new JButton[10];
     JButton[] functionButtons = new JButton[9];
+
+
     JButton addButton,subButton,mulButton,divButton;
     JButton decButton, equButton, delButton, clrButton, negButton;
     JPanel panel;
 
     Font myFont = new Font("Serif",Font.BOLD,30);
 
+    /* The two numbers we are working with and the result */
     double num1=0,num2=0,result=0;
     char operator;
 
-    Calculator(){
+    Calculator() {
 
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -114,29 +117,35 @@ public class Calculator implements ActionListener{
                 textfield.setText(textfield.getText().concat(String.valueOf(i)));
             }
         }
+
         if(e.getSource()==decButton) {
             textfield.setText(textfield.getText().concat("."));
         }
+
         if(e.getSource()==addButton) {
             num1 = Double.parseDouble(textfield.getText());
             operator ='+';
             textfield.setText("");
         }
+
         if(e.getSource()==subButton) {
             num1 = Double.parseDouble(textfield.getText());
             operator ='-';
             textfield.setText("");
         }
+
         if(e.getSource()==mulButton) {
             num1 = Double.parseDouble(textfield.getText());
             operator ='*';
             textfield.setText("");
         }
+
         if(e.getSource()==divButton) {
             num1 = Double.parseDouble(textfield.getText());
             operator ='/';
             textfield.setText("");
         }
+
         if(e.getSource()==equButton) {
             num2=Double.parseDouble(textfield.getText());
 
@@ -157,9 +166,11 @@ public class Calculator implements ActionListener{
             textfield.setText(String.valueOf(result));
             num1=result;
         }
+
         if(e.getSource()==clrButton) {
             textfield.setText("");
         }
+
         if(e.getSource()==delButton) {
             String string = textfield.getText();
             textfield.setText("");
@@ -167,6 +178,7 @@ public class Calculator implements ActionListener{
                 textfield.setText(textfield.getText()+string.charAt(i));
             }
         }
+
         if(e.getSource()==negButton) {
             double temp = Double.parseDouble(textfield.getText());
             temp*=-1;
