@@ -30,11 +30,13 @@ public class Calculator implements ActionListener{
         frame.setLayout(null);
         frame.setLocationRelativeTo(null);
 
+        /**/
         textfield = new JTextField();
         textfield.setBounds(50, 25, 300, 50);
         textfield.setFont(myFont);
         textfield.setEditable(false);
 
+        /* The functions button initialized and added into the array */
         addButton = new JButton("+");
         subButton = new JButton("-");
         mulButton = new JButton("*");
